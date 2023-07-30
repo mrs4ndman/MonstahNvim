@@ -1,6 +1,12 @@
 #### Para toda la vaina chula, necesitas una Nerdfont, `rg`, `fd` y alguna cosilla más.
 ### Instrucciones, por si no sabes donde está algo:
 
+```bash
+mv ~/.config/nvim ~/.config/nvim_bak
+git clone git@github.com:mrs4ndman/MonstahNvim.git ~/.config/nvim
+nvim
+```
+
 #### Si no sabes lo que te falta, `:checkhealth` te debería ayudar.
 
 - `lua/plugins/colores.lua` -> Catppuccin y demás temas de colores que pongas, la instalación ahí.
