@@ -77,8 +77,8 @@ return {
       -- La parte del medio, las teclas que puedes pulsar en la dashboard como atajos
       dashboard.section.buttons.val = {
         dashboard.button("n", "    Nuevo archivo", "<cmd>ene<CR>"),
-        dashboard.button("e", "󰝰    Ex", ":Explore<CR>"),
         dashboard.button("", "La tecla invoca el comando que escribas en el siguiente campo, netrw / Ex en este caso"),
+        dashboard.button("e", "󰝰    Ex", ":Explore<CR>"),
         dashboard.button("v", "    Recuperar sesión (No lo tienes instalado)", ":SessionRestore<CR>"),
         dashboard.button("f", "󰈞    Buscar archivo en el proyecto / directorio", ":Telescope find_files<CR>"),
         dashboard.button("h", "󱂵    Home dir find", ":cd $HOME | Telescope find_files<CR>"),

@@ -6,12 +6,12 @@ return {
   },
   keys = {
     -- TELESCOPE
-    { "<leader>tf", "<cmd>Telescope find_files",  desc = "Buscar archivos" },
-    { "<leader>tb", "<cmd>Telescope buffers",     desc = "Lista de buffers" },
-    { "<leader>tr", "<cmd>Telescope oldfiles",    desc = "Archivos recientes" },
-    { "<leader>tl", "<cmd>Telescope loclist",     desc = "Lista de errores" },
-    { "<leader>vh", "<cmd>Telescope help_tags",   desc = "Tags de ayuda de comandos" },
-    { "<leader>sg", "<cmd>Telescope grep_string", desc = "Buscar esta string" },
+    { "<leader>tf", "<cmd>Telescope find_files<CR>",  desc = "Buscar archivos" },
+    { "<leader>tb", "<cmd>Telescope buffers<CR>",     desc = "Lista de buffers" },
+    { "<leader>tr", "<cmd>Telescope oldfiles<CR>",    desc = "Archivos recientes" },
+    { "<leader>tl", "<cmd>Telescope loclist<CR>",     desc = "Lista de errores" },
+    { "<leader>vh", "<cmd>Telescope help_tags<CR>",   desc = "Tags de ayuda de comandos" },
+    { "<leader>sg", "<cmd>Telescope grep_string<CR>", desc = "Buscar esta string" },
     {
       "<leader>tg",
       "<cmd> Telescope grep_string({ search = vim.fn.input() })<CR>",

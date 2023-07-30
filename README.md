@@ -1,5 +1,6 @@
 #### Para toda la vaina chula, necesitas una Nerdfont, `rg`, `fd` y alguna cosilla más.
 ### Instrucciones, por si no sabes donde está algo:
+#### El resto de cosas ya las decides tú, que son preferencia del usuario ;)
 
 ```bash
 mv ~/.config/nvim ~/.config/nvim_bak
@@ -16,3 +17,8 @@ nvim
 - `lua/plugins/telescope.lua` -> Esencial para navegar, te dejo mi configuración pero la puedes cambiar sin problemas
 - `lua/plugins/lastplace` -> Tu NeoVim recuerda por ti donde te quedaste en un archivo.
 - `lua/plugins/juegitos.lua` -> Unos plugins para jugar / entrenar skills.
+- `lua/plugins/harpoon.lua` -> Configuración de harpoon
+- `lua/plugins/which-key.lua` -> Configuración de which-key, para que te diga las teclas ;)
+- `lua/plugins/gitsigns.lua` -> Configuración del gitsigns, para el buen diff de git sin salir de nvim
+- `lua/plugin/undotree.lua` -> Historial de deshacer
+- `lua/plugin/vinegar.lua` -> Acceso directo a Ex
