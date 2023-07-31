@@ -21,3 +21,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true })
 -- Para indentar mejor al seleccionar código en VISUAL
 vim.keymap.set("v", "<", "<gv", { silent = true })
 vim.keymap.set("v", ">", ">gv", { silent = true })
+
+-- Atajos de Lazy y Mason
+vim.keymap.set("n", "<leader>lz", "<cmd>Lazy<CR>", { desc = "Lazy", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>mp", "<cmd>Mason<CR>", { desc = "Mason", noremap = true, silent = true })
