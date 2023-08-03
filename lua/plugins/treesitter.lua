@@ -8,6 +8,9 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter-context",
       "windwp/nvim-ts-autotag",
+      -- Añade highlighting más concreto, para distinguir bien las cosas
+      "David-Kunz/markid",
+      -- ESTO VA CON EL markid = { enable = true } de la línea 45
     },
     config = function()
       require("nvim-treesitter.configs").setup({
@@ -75,11 +78,5 @@ return {
         },
       }
     end,
-  },
-  {
-    "David-Kunz/markid",
-    -- Añade highlighting más concreto, para distinguir bien las cosas
-    -- ESTO VA CON EL markid = { enable = true } de la línea 45
-    event = { "BufReadPre", "BufNewFile" },
   },
 }
