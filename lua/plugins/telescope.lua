@@ -5,7 +5,7 @@ return {
     "nvim-lua/plenary.nvim",
   },
   keys = {
-    -- TELESCOPE
+    -- TECLAS DEL TELESCOPE
     { "<leader>tf", "<cmd>Telescope find_files<CR>",  desc = "Buscar archivos" },
     { "<leader>tb", "<cmd>Telescope buffers<CR>",     desc = "Lista de buffers" },
     { "<leader>tr", "<cmd>Telescope oldfiles<CR>",    desc = "Archivos recientes" },
@@ -21,14 +21,18 @@ return {
   config = function()
     require("telescope").setup({
       pickers = {
+        -- Si quieres tener la preview del archivo activada cuando hay espacio suficiente
         colorscheme = { enable_preview = true },
         find_files = {
+          -- Puedes comentar esto si no tienes fd instalado
           find_command = { "fd", "--type", "f", "--hidden", "--exclude", ".git", "--strip-cwd-prefix" },
           theme = "ivy",
         },
       },
       defaults = {
+        -- El estilo de UI por defecto, luego se puede cambiar picker por picker (línea 28)
         theme = "dropdown",
+        -- Necesitas "rg" para poder hacer grep a través de un proyecto
         vimgrep_arguments = {
           "rg",
           "--no-heading",
@@ -38,9 +42,11 @@ return {
           "--smart-case",
           "--hidden",
         },
+        -- Opciones de sorting muy lógicas
         sort_mru = true,
         sorting_strategy = "ascending",
         color_devicons = true,
+        -- Puedes probar a tocar estos ajustes, igualmente puedes ver la documentación
         layout_strategy = "horizontal",
         layout_config = {
           prompt_position = "top",
@@ -53,6 +59,8 @@ return {
         -- results_title = "",
         wrap_results = true,
         hidden = true,
+        -- Teclas cuando ya tienes telescope abierto, para esto si que necesitas
+        -- leer la documentación
         mappings = {
           i = {
             ["<C-n>"] = require("telescope.actions").preview_scrolling_down,

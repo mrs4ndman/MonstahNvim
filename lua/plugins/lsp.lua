@@ -2,9 +2,13 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
+    -- Setup para Lua
     "folke/neodev.nvim",
+    -- No sé si funciona, pero déjalo estar xddd, ví que funcionaba con Ocaml
     "jubnzv/virtual-types.nvim",
+    -- Esto da colores a sintaxis que el LSP no cubre
     "folke/lsp-colors.nvim",
+    -- Gestor de LSP, formatters y demás
     "williamboman/mason.nvim",
     -- Navegador de código, descoméntalo aquí y en lua/custom/lsp.lua si quieres usarlo
     -- {

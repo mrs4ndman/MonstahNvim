@@ -16,6 +16,7 @@ return {
       return math.floor(vim.o.columns * 0.70)
     end,
   },
+  -- Esto redirige las notificaciones por defecto a las chulas
   config = function()
     vim.notify = require("notify")
   end,

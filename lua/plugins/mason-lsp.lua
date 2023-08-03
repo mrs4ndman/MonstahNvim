@@ -4,7 +4,8 @@ return {
   config = function()
     require("mason-lspconfig").setup({
       ensure_installed = {
-        -- Language servers automagically installed
+        -- Lista de LSPs (SOLO LSPs) a instalar automáticamente
+        -- Se instalan automágicamente xddd, añade a la lista si necesitas más
         "lua_ls",
         "vimls",
         "marksman",

@@ -15,6 +15,7 @@ return {
     config = function()
       require("nvim-treesitter.configs").setup({
         -- Sigue su documentación para instalar highlighting para nuevos lenguajes
+        -- También puedes hacer :TSInstall y darle al Tab para completar
         ensure_installed = {
           "astro",
           "c",
