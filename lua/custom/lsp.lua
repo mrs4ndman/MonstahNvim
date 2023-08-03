@@ -21,6 +21,7 @@ M.capabilities.textDocument.completion.completionItem = {
 }
 M.on_attach = function (client, bufnr)
   -- navic.attach(client, bufnr)
+  -- SI QUIERES DESCOMENTA ESTO Y LA PIEZA DE PLUGINS/LSP.LUA QUE PONE NAVBUDDY
   -- navbuddy.attach(client, bufnr)
   require("virtualtypes").on_attach()
 end
@@ -80,7 +81,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "[G]o to [D]efinition" })
     vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { desc = "[G]o to [T]ype definition" })
     vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "[G]o to [I]mplementation" })
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover info" })
+    -- Ayuda (te lo comento pq a mí me molesta a veces si hago K)
+    -- vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover info" })
     vim.keymap.set("n", "<leader>vws", function()
       vim.lsp.buf.workspace_symbol()
     end, { desc = "Workspace Symbol" })
@@ -118,10 +120,11 @@ for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
-
+-- BLOQUE DE CÓDIGO QUE TE DECÍA
 vim.diagnostic.config({
-  virtual_text = false,
-  virtual_lines = true,
+  virtual_text = true, -- COMENTARÍAS ESTO
+  -- virtual_text = false, -- Y DESCOMENTAS ESTAS 2
+  -- virtual_lines = true,
   underline = true,
   update_in_insert = false,
   severity_sort = true,

@@ -25,3 +25,6 @@ vim.keymap.set("v", ">", ">gv", { silent = true })
 -- Atajos de Lazy y Mason
 vim.keymap.set("n", "<leader>lz", "<cmd>Lazy<CR>", { desc = "Lazy", noremap = true, silent = true })
 vim.keymap.set("n", "<leader>mp", "<cmd>Mason<CR>", { desc = "Mason", noremap = true, silent = true })
+
+-- Para quitarte las notificaciones de encima, no te quita funcionalidad ;)
+vim.keymap.set("n", "<esc>", function() require("notify").dismiss() end, { desc = "No notis" })

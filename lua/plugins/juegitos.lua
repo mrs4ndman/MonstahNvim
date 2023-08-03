@@ -8,5 +8,14 @@ return {
     -- Para echarte un Tetris
     "alec-gibson/nvim-tetris",
     cmd = "Tetris",
+    keys = {
+      { "<leader>T", "<cmd>Tetris<CR>", desc = "Tetris" },
+    }
   },
+  {
+    "eandrju/cellular-automaton.nvim",
+    keys = {
+      { "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>", desc = "Cool animation" },
+    }
+  }
 }
