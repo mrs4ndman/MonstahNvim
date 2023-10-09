@@ -1,6 +1,3 @@
--- LSP Explicit config
--- local navic = require("nvim-navic")
--- local navbuddy = require("nvim-navbuddy")
 local M = {}
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 ---@diagnostic disable-next-line: missing-fields
@@ -61,65 +58,19 @@ M.on_attach = function(client, bufnr)
   -- navbuddy.attach(client, bufnr)
   require("virtualtypes").on_attach()
 end
--- First, Native LSP
-local lspconfig = require("lspconfig")
-lspconfig.lua_ls.setup({
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" },
-      },
-    },
-  },
-})
-lspconfig.rust_analyzer.setup({
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-  settings = {
-    ["rust-analyzer"] = {
-      diagnostics = {
-        enable = false,
-      },
-    },
-  },
-})
-lspconfig.clangd.setup({
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-})
-lspconfig.astro.setup({})
-lspconfig.pylsp.setup({})
-lspconfig.vimls.setup({})
-lspconfig.marksman.setup({})
-lspconfig.ocamlls.setup({})
-lspconfig.neocmake.setup({})
-lspconfig.html.setup({})
--- lspconfig.emmet_ls.setup({})
-lspconfig.cssls.setup({})
-lspconfig.gopls.setup({})
-lspconfig.eslint.setup({})
-lspconfig.tsserver.setup({})
-lspconfig.bashls.setup({})
-lspconfig.ansiblels.setup({})
-lspconfig.yamlls.setup({})
-lspconfig.ruby_ls.setup({})
--- lspconfig.jdtls.setup {}
 
--- Change here the left sidebar LSP icon config for:
-local signs = { Error = "󰅚 ", Warn = " ", Hint = "󰌶 ", Info = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+local config = {
+  capabilities = M.capabilities,
+  on_attach = M.on_attach,
+  -- The command that starts the language server
+  -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
+  cmd = { "/home/mrsandman/.local/share/nvim/mason/bin/jdtls" },
+  root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw", ".javastart" }, { upward = true })[1]),
+}
 
--- BLOQUE DE CÓDIGO QUE TE DECÍA
-vim.diagnostic.config({
-  virtual_text = true, -- COMENTARÍAS ESTO
-  -- virtual_text = false, -- Y DESCOMENTAS ESTAS 2
-  -- virtual_lines = true,
-  underline = true,
-  update_in_insert = false,
-  severity_sort = true,
-})
+require("jdtls").start_or_attach(config)
+
+vim.bo.shiftwidth = 4
+vim.bo.tabstop = 4
+vim.bo.expandtab = true
+vim.bo.softtabstop = 4
