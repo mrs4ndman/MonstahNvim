@@ -8,6 +8,7 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter-context",
       "windwp/nvim-ts-autotag",
+      "JoosepAlviste/nvim-ts-context-commentstring",
       -- Añade highlighting más concreto, para distinguir bien las cosas
       "David-Kunz/markid",
       -- ESTO VA CON EL markid = { enable = true } de la línea 45
@@ -47,6 +48,10 @@ return {
           additional_vim_regex_highlighting = false,
         },
         indent = { enable = true },
+        context_commentstring = {
+          enable = true,
+          enable_autocmd = false,
+        },
         autotag = { enable = true },
         markid = { enable = true },
       })
@@ -55,6 +60,7 @@ return {
   {
     -- PARÉNTESIS DE COLORINES :D
     "HiPhish/rainbow-delimiters.nvim",
+    enabled = false,
     event = "BufReadPost",
     config = function()
       local rainbow_delimiters = require("rainbow-delimiters")

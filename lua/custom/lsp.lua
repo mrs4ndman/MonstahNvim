@@ -69,7 +69,12 @@ lspconfig.bashls.setup({})
 lspconfig.ansiblels.setup({})
 lspconfig.yamlls.setup({})
 lspconfig.ruby_ls.setup({})
--- lspconfig.jdtls.setup {}
+
+--Configuracion del LSP de Java
+--lspconfig.jdtls.setup({
+--  on_attach = M.on_attach,
+--  capabilities = M.capabilities
+--})
 --
 -- LSP Attach keybinds
 vim.api.nvim_create_autocmd("LspAttach", {
